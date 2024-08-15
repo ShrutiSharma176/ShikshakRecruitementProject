@@ -13,7 +13,8 @@ const authenticateJWT = (request,response,next)=>{
     var token =request.cookies.admin_jwt;
     console.log("token in adminRouter ");
     if(!token){
-        response.render("adminLogin",{msg:""});
+        //response.render("adminLogin",{msg:""});
+        response.redirect("https://shikshakrecruitement.onrender.com/admin/adminLogin");
     }else{
         jwt.verify(token,admin_secret_key,(error,payload)=>{
             if(error){
