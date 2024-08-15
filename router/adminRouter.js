@@ -28,9 +28,13 @@ const authenticateJWT = (request,response,next)=>{
     }
 }
 
-adminRouter.get("/",authenticateJWT,(request,response)=>{
-    response.render("adminHomePage",{email:request.payload._id});
+// adminRouter.get("/",authenticateJWT,(request,response)=>{
+//     response.render("adminHomePage",{email:request.payload._id});
+// });
+adminRouter.get("/",(request,response)=>{
+    response.render("adminLogin",{msg:""});
 });
+
 adminRouter.get("/adminHomePage",authenticateJWT,(request,response)=>{
     response.render("adminHomePage",{email:request.payload._id});
 });
