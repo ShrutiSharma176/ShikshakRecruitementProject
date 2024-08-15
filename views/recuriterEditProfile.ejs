@@ -1,0 +1,53 @@
+<%- include("recruiterHeader.ejs") %>
+<!-- stats section -->
+<section class="homeblock-stats py-5" id="stats">
+    <div class="container py-md-5 py-4">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="position-relative">
+                    <h3 class="title-style mb-2">Recruiter Profile</h3>
+                </div>
+                <div class="row mt-4 pt-2">
+                    <form action="/recruiter/updateProfile" method="post">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" name="name" value="<%= obj.name %>" >
+                        </div>
+                        <div class="mb-3">
+                            <label for="recruiter" class="form-label">Recruiter</label>
+                          <select class="form-control" id="recruiter" name="recruiter">
+                            <option value="">Select Option</option>
+                            <option value="school">School</option>
+                            <option value="college">College</option>
+                            <option value="professional institute">Professional Institute</option>
+                          </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="_id" class="form-label">Email</label>
+                            <input type="text" class="form-control" id="_id" name="_id" readonly value="<%= obj._id %>" >
+                        </div>
+                        <div class="mb-3">
+                            <label for="contact" class="form-label">Contact</label>
+                            <input type="text" class="form-control" id="contact" name="contact" value="<%= obj.contact %>" >
+                        </div>
+                        <div class="mb-3">
+                            <label for="address" class="form-label">Address</label>
+                            <input type="text" class="form-control" id="address" name="address" value="<%= obj.address %>" >
+                        </div>
+                        <button type="submit" class="btn btn-danger" style="width: 100%;">Update Profile</button>
+                      </form>
+                </div>
+                <br>
+                    <center>
+                        <a href="/recruiter/updatePassword">Want to Change Password? Click Here</a>
+                    </center>
+            </div>
+            <div class="col-xl-5 col-lg-6 offset-xl-1 ps-xl-0 mt-lg-0 mt-5">
+                <img src="assets/images/about.jpg" class="img-fluid radius-image" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+<!-- //stats section -->
+<%- include("recruiterFooter.ejs") %>
+<%- include("javascript.ejs") %>

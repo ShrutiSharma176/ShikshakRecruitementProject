@@ -1,0 +1,40 @@
+<%- include('adminHeader.ejs') %>
+    <br><br>
+    <center>
+        <h2 style="background-color: lightgrey;  width: 80%;"><b>Applied Candidate List</b></h2><br>
+
+        <table width="80%" style="border:2px solid black" align="center" cellspacing="4" cellpadding="6">
+            <tr style="background-color: black; color: white;">
+                <th>Vacancy_id</th>
+                <th>Post</th>
+                <th>Recruiter Email</th>
+                <th>Candidate Email</th>
+                <th>View Profile</th>
+                <th>Status By Recruiter</th>
+            </tr>
+            <%for(i=0;i<obj.length;i++){%>
+                <tr style="background-color: whitesmoke;">
+                    <td>
+                        <%= obj[i].vacancyId%>
+                    </td>
+                    <td>
+                        <%= obj[i].post%>
+                    </td>
+                    <td>
+                        <%= obj[i].recruiterEmail%>
+                    </td>
+                    <td>
+                        <%= obj[i].candidateEmail%>
+                    </td>
+                    <td><a download href="<%= arr[i] %>">
+                            <%= arr[i] %>
+                        </a></td>
+                    <td>
+                        <%= obj[i].statusByRecruiter%>
+                    </td>
+                </tr>
+                <%}%>
+        </table>
+    </center>
+    <%- include('adminFooter.ejs') %>
+        <%- include('javascript.ejs') %>

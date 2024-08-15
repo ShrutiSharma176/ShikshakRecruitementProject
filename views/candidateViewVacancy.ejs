@@ -1,0 +1,61 @@
+<%- include('candidateHeader.ejs') %>
+    <br><br>
+    <center>
+        <h2 style="background-color: lightgrey;font-weight: bolder;  width: 80%;">Vacancy</h2><br>
+        <table width="80%" style="border:2px solid black" align="center" cellspacing="4" cellpadding="6">
+            <tr style="background-color: black;color: white;text-align: center;">
+                <th>Post</th>
+                <th>Subject</th>
+                <th>Location</th>
+                <th>Qualification</th>
+                <th>Vacancy</th>
+                <th>Salary</th>
+                <th>Advertising Date</th>
+                <th>Last Date</th>
+                <th>Email</th>
+                <th>Recruiter</th>
+                <th>Recruiter Name</th>
+                <th>Apply</th>
+            </tr>
+            <%obj.forEach(function(list){%>
+                <tr style="background-color: whitesmoke;text-align: center;">
+                    <td>
+                        <%= list.post%>
+                    </td>
+                    <td>
+                        <%= list.subject%>
+                    </td>
+                    <td>
+                        <%= list.location%>
+                    </td>
+                    <td>
+                        <%= list.qualification%>
+                    </td>
+                    <td>
+                        <%= list.vacancy%>
+                    </td>
+                    <td>
+                        <%= list.salary%>
+                    </td>
+                    <td>
+                        <%= list.advdate%>
+                    </td>
+                    <td>
+                        <%= list.lastdate%>
+                    </td>
+                    <td>
+                        <%= list.email%>
+                    </td>
+                    <td>
+                        <%= list.recruiter%>
+                    </td>
+                    <td>
+                        <%= list.recruitername%>
+                    </td>
+                    <td><a href="/candidate/applyVacancy?email=<%= email%>&vid=<%= list._id%>">apply</a></td>
+                </tr>
+                <%});%>
+        </table>
+    </center>
+    <%- include('candidateFooter.ejs') %>
+        <%- include('javascript.ejs') %>

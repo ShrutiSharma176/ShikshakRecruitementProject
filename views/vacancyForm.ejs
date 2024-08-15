@@ -1,0 +1,73 @@
+<%- include('recruiterHeader.ejs') %>
+<section class="homeblock-stats py-5" id="stats">
+    <div class="container py-md-5 py-4">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="position-relative">
+                    <h3 class="title-style mb-2">Vacancy Form</h3>
+                                       </div>
+                <div class="row mt-4 pt-2">
+                    <form action="/recruiter/addVacancy" method="post">
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Post</label>
+                          <input placeholder="Enter Post" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="post">
+                        </div>
+                        <div class="mb-3">
+                          <label for="exampleInputEmail1" class="form-label">Subject</label>
+                          <input type="text" class="form-control" placeholder="Enter Subject" id="exampleInputEmail1" aria-describedby="emailHelp" name="subject">
+                        </div>
+                        <div class="mb-3">
+                          <label for="exampleInputPassword1" class="form-label">Location</label>
+                          <input type="text" class="form-control" placeholder="Enter Location" id="exampleInputPassword1" name="location">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Qualification</label>
+                          <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter Qualification" aria-describedby="emailHelp" name="qualification">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Vacancy</label>
+                          <input type="number" class="form-control" placeholder="Enter Vacancy" id="exampleInputEmail1" aria-describedby="emailHelp" name="vacancy">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Salary</label>
+                          <input type="text" class="form-control" placeholder="Enter Salary" id="exampleInputEmail1" aria-describedby="emailHelp" name="salary">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Advertising Date</label>
+                          <input type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="advdate">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Last Date</label>
+                          <input type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="lastdate">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Email</label>
+                          <input readonly type="email" value="<%= obj._id%>" class="form-control" placeholder="Enter Email Id" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
+                        </div>
+                       
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Recruiter</label>
+                          <input readonly type="text" value="<%= obj.recruiter%>" class="form-control" placeholder="Enter Recruiter" id="exampleInputEmail1" aria-describedby="emailHelp" name="recruiter">
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Recruiter Name</label>
+                          <input readonly type="text" value="<%= obj.name%>" class="form-control" placeholder="Enter Recruiter Name" id="exampleInputEmail1" aria-describedby="emailHelp" name="recruitername">
+                        </div>
+
+                        <button type="submit" class="btn btn-danger" style="width: 100%;">Submit</button>
+                      </form>
+                      
+                </div><br>
+                <center>
+                    <a href="/recruiter/recruiterlogin">Already Registered ? Login Here</a>
+                  </center>
+                </div>
+                <div class="col-xl-5 col-lg-6 offset-xl-1 ps-xl-0 mt-lg-0 mt-5">
+                    <img src="assets/images/about.jpg" class="img-fluid radius-image" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <%- include('recruiterFooter.ejs') %>
+    <%- include('javascript.ejs') %>

@@ -1,0 +1,77 @@
+<%- include("recruiterHeader.ejs") %>
+    <!-- stats section -->
+    <section class="homeblock-stats py-5" id="stats">
+        <div class="container py-md-5 py-4">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="position-relative">
+                        <h3 class="title-style mb-2">Recruiter Profile</h3>
+                    </div>
+                    <div class="row mt-4 pt-2">
+                        <form action="/candidate/editProfile" method="post">
+                            <div class="mb-3">
+                                <label for="firstname" class="form-label">First Name</label>
+                                <input type="text" class="form-control" id="firstname" name="firstname" readonly
+                                    value="<%= obj.firstname %>">
+                            </div>
+                            <div class="mb-3">
+                                <label for="lastname" class="form-label">Last Name</label>
+                                <input type="text" class="form-control" id="lastname" name="lastname" readonly
+                                    value="<%= obj.lastname %>">
+                            </div>
+                            <div class="mb-3">
+                                <label for="_id" class="form-label">Email</label>
+                                <input type="text" class="form-control" id="_id" name="_id" readonly
+                                    value="<%= obj._id %>">
+                            </div>
+                            <div class="mb-3">
+                                <label for="gender" class="form-label">Gender</label>
+                                <input type="text" readonly class="form-control" id="gender" value="<%= obj.gender %>" name="gender">
+                            </div>
+                            <div class="mb-3">
+                                <label for="date" class="form-label">Date</label>
+                                <input type="date" readonly class="form-control" id="date" value="<%= obj.date %>" name="date">
+                            </div>
+                            <div class="mb-3">
+                                <label for="address" class="form-label">Address</label>
+                                <input type="text" class="form-control" readonly placeholder="Enter Address" id="address"
+                                    value="<%= obj.address %>" name="address">
+                            </div>
+                            <div class="mb-3">
+                                <label for="mobile" class="form-label">Mobile no.</label>
+                                <input type="text" readonly class="form-control" placeholder="Enter Mobile no." id="mobile"
+                                    value="<%= obj.mobile %>" name="mobile">
+                            </div>
+                            <div class="mb-3">
+                                <label for="qualification" class="form-label">Qualification</label>
+                                <input type="text" readonly class="form-control" placeholder="Enter Qualification"
+                                    id="qualification" value="<%= obj.qualification %>" name="qualification">
+                            </div>
+                            <div class="mb-3">
+                                <label for="percentage" class="form-label">Percentage</label>
+                                <input type="text" readonly class="form-control" placeholder="Enter Percentage" id="percentage"
+                                    value="<%= obj.percentage %>" name="percentage">
+                            </div>
+                            <div class="mb-3">
+                                <label for="xperience" class="form-label">Experience</label>
+                                <input type="text" readonly class="form-control" placeholder="Enter Experience" id="xperience"
+                                    value="<%= obj.experience %>" name="experience">
+                            </div>
+
+                            <div class="row"> <button type="submit" class="btn btn-danger"
+                                    style="width: 100%;">Edit Profile</button>
+                            </div>
+                        </form>
+
+                    </div>
+
+                </div>
+                <div class="col-xl-5 col-lg-6 offset-xl-1 ps-xl-0 mt-lg-0 mt-5">
+                    <img src="assets/images/about.jpg" class="img-fluid radius-image" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- //stats section -->
+    <%- include("recruiterFooter.ejs") %>
+        <%- include("javascript.ejs") %>

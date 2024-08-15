@@ -1,0 +1,25 @@
+<%- include('./candidateHeader.ejs') %>
+    <center>
+        <h2 style="background-color: lightgrey;font-weight: bolder;  width: 80%;">Your Status</h2><br>
+        <table width="80%" style="border:2px solid black" align="center" cellspacing="4" cellpadding="6">
+            <tr style="background-color: black;color: white;">
+                <th>Vacancy Id</th>
+                <th>Post</th>
+                <th>Recruiter Email</th>
+                <th>candidate Email</th>
+                <th>Status</th>
+            </tr>
+            <% for(i=0;i<obj.length;i++){ %>
+                <tr style="background-color: whitesmoke;">
+                    <td><%= obj[i].vacancyId %></td>
+                    <td><%= obj[i].post %></td>
+                    <td><%= obj[i].recruiterEmail %></td>
+                    <td><%= obj[i].candidateEmail %></td>
+                    <td><%= obj[i].statusByRecruiter %></td>
+                </tr>
+            <% } %>
+
+        </table>
+    </center>
+<%- include('./candidateFooter.ejs') %>
+<%- include('./javascript.ejs') %>
