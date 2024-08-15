@@ -32,7 +32,10 @@ export const registrationController = async (request, response) => {
                 var res = await recruiterModel.create(obj);
                 console.log("res value of Recruiter registration Controller :", res);
 
-                response.render("recruiterLogin", { msg: "Mail sent successfully | Please Verify...." })
+                //response.render("recruiterLogin", { msg: "Mail sent successfully | Please Verify...." })
+                // response.redirect("https://shikshakrecruitement.onrender.com/recruiter/recruiterLogin?message=Email Verified Succesfully | Please Wait for Admin Approval within 24 Hours");
+
+                response.redirect("https://shikshakrecruitement.onrender.com/recruiter/recruiterLogin");
             }
         });
 

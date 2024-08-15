@@ -14,10 +14,10 @@ const recruiter_secret_key = process.env.SECRET_KEY;
 
 var authenticateJWT = (request,response,next)=>{
     var token = request.cookies.recruiter_jwt;
-    var msg = request.query.message;
+    //var msg = request.query.message;
 
     if(!token){
-        response.render("recruiterLogin",{msg : msg});
+        response.render("recruiterLogin",{msg : ""});
     }
     else{
         jwt.verify(token,recruiter_secret_key,(error,payload)=>{
