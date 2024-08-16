@@ -35,21 +35,21 @@ adminRouter.get("/",(request,response)=>{
     response.render("adminLogin",{msg:""});
 });
 
-adminRouter.get("/adminHomePage",authenticateJWT,(request,response)=>{
+adminRouter.get("/adminHomePage",(request,response)=>{
     response.render("adminHomePage",{email:request.payload._id});
 });
 
 adminRouter.post("/login",adminLoginController);
 
-adminRouter.get("/adminViewRecruiterList",authenticateJWT,adminViewRecruiterListController);
+adminRouter.get("/adminViewRecruiterList",adminViewRecruiterListController);
 
 adminRouter.get("/adminVerifyEmail",adminVerifyRecruiterController);
 
-adminRouter.get("/adminViewCandidateList",authenticateJWT,adminViewCandidateListController);
+adminRouter.get("/adminViewCandidateList",adminViewCandidateListController);
 
 adminRouter.get("/adminVerifyCandidate",adminVerifyCandidateController);
-adminRouter.get("/adminViewVacancyList",authenticateJWT,adminViewVacancyListController);
-adminRouter.get("/adminViewAppliedCandidateList",authenticateJWT,adminViewAppliedCandidateListController);
+adminRouter.get("/adminViewVacancyList",adminViewVacancyListController);
+adminRouter.get("/adminViewAppliedCandidateList",adminViewAppliedCandidateListController);
 adminRouter.get("/logout",logoutController);
 
 export default adminRouter;

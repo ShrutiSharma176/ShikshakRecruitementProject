@@ -13,15 +13,15 @@ const admin_secret_key = process.env.SECRET_KEY;
 export const adminLoginController = async (request, response) => {
     var obj = request.body;
     try {
-        var expireTime = {
-            expiresIn: '1d'
-        };
-        var token = jwt.sign({ _id: request.body._id }, admin_secret_key, expireTime);
+        // var expireTime = {
+        //     expiresIn: '1d'
+        // };
+        // var token = jwt.sign({ _id: request.body._id }, admin_secret_key, expireTime);
 
-        if (!token) {
-            response.render("index");
-        } else {
-            response.cookie("admin_jwt", token, { maxage: 24 * 60 * 60 * 1000, httpOnly: true });
+        // if (!token) {
+        //     response.render("index");
+        // } else {
+        //     response.cookie("admin_jwt", token, { maxage: 24 * 60 * 60 * 1000, httpOnly: true });
             var adminEmail = await adminModel.findOne({ _id: request.body._id });
             // console.log("adminEmail : "+adminEmail); 
             if (adminEmail != null) {
@@ -38,7 +38,7 @@ export const adminLoginController = async (request, response) => {
             } else {
                 console.log("invalid email");
             }
-        }
+    //     }
     } catch (error) {
         console.log("error in adminLoginController : ", error);
     }
@@ -47,7 +47,8 @@ export const adminLoginController = async (request, response) => {
 export const adminViewRecruiterListController = async (request, response) => {
     try {
         var res = await recruiterModel.find();
-        response.render("adminViewRecruiterList", { obj: res, email: request.payload._id });
+        // response.render("adminViewRecruiterList", { obj: res, email: request.payload._id });
+        response.render("adminViewRecruiterList", { obj: res, email:"" });
     } catch (error) {
         console.log("Error in adminViewRecruiterListController : ", error);
     }
@@ -75,7 +76,8 @@ export const adminVerifyRecruiterController = async (request, response) => {
 export const adminViewCandidateListController = async (request, response) => {
     try {
         var res = await candidateModel.find();
-        response.render("adminViewCandidateList", { obj: res, email: request.payload._id });
+        // response.render("adminViewCandidateList", { obj: res, email: request.payload._id });
+        response.render("adminViewCandidateList", { obj: res, email: "" });
     } catch (error) {
         console.log("Error in adminViewCandidateListCntroller : " + error);
     }
@@ -113,7 +115,8 @@ export const logoutController = async (request, response) => {
 export const adminViewVacancyListController = async (request, response) => {
     try {
         var res = await vacancyModel.find();
-        response.render("adminViewVacancy", { obj: res, email: request.payload._id });
+        // response.render("adminViewVacancy", { obj: res, email: request.payload._id });
+        response.render("adminViewVacancy", { obj: res, email: "" });
     } catch (err) {
         console.log("Error in adminViewVacancyListController : ", err);
     }
@@ -130,7 +133,8 @@ export const adminViewAppliedCandidateListController = async (request, response)
             // arr = [...arr,res1.file];
         }
         console.log(arr);
-        response.render("adminViewAppliedCandidateList", { obj: res, arr: arr, email: request.payload._id });
+        // response.render("adminViewAppliedCandidateList", { obj: res, arr: arr, email: request.payload._id });
+        response.render("adminViewAppliedCandidateList", { obj: res, arr: arr, email: "" });
     } catch (err) {
         console.log("Error in adminViewAppliedCandidateList : ", err);
     }
