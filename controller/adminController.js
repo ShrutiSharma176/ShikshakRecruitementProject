@@ -32,7 +32,7 @@ export const adminLoginController = async (request, response) => {
                 if (status) {
                     console.log("email : --------------- ",request.body._id);
                     //response.render("adminHomePage", { email: request.body._id });
-                    response.redirect(`https://shikshakrecruitement.onrender.com/admin/adminHomePage?email="${request.body._id}"`);
+                    response.redirect(`https://shikshakrecruitement.onrender.com/admin/adminHomePage?email=${request.body._id}`);
                 }
                 else {
                     console.log("Error while admin Login");
