@@ -30,7 +30,9 @@ export const adminLoginController = async (request, response) => {
                 var status = bcrypt.compare(adminPassword.password, obj.password);
 
                 if (status) {
-                    response.render("adminHomePage", { email: request.body._id });
+                    console.log("email : --------------- ",request.body._id);
+                    //response.render("adminHomePage", { email: request.body._id });
+                    response.redirect("https://shikshakrecruitement.onrender.com");
                 }
                 else {
                     console.log("Error while admin Login");
