@@ -36,7 +36,8 @@ adminRouter.get("/",(request,response)=>{
 });
 
 adminRouter.get("/adminHomePage",(request,response)=>{
-    response.render("adminHomePage",{email:request.payload._id});
+    var email = request.query.email;
+    response.render("adminHomePage",{email:email});
 });
 
 adminRouter.post("/login",adminLoginController);
